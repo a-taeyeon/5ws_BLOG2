@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block contents %}
-<body>
+<body style="background-color: cadetblue;">
     <br><br>
 
     {% for blog in blogs.all %}
@@ -10,8 +10,9 @@
         <div class="card-body">
           <h5 class="card-title">{{blog.title}}</h5>
           <h6 class="card-subtitle mb-2 text-muted">{{blog.pub_date}}</h6>
-          <p class="card-text">{{blog.summary}}</p>
-          <a href="{%url 'detail' blog.id%}" class="card-link">...more</a>
+          <p class="card-text">{{blog.summary}}<a href="{%url 'detail' blog.id%}" class="card-link">&nbsp;&nbsp;...more</a><br></p>
+          <a href="{% url 'update' blog.id %}" class="card-link">수정</a>&nbsp;&nbsp;&nbsp;
+          <a href="{% url 'delete' blog.id %}" class="card-link">삭제</a>
         </div>
     </div>
     <br><br>
