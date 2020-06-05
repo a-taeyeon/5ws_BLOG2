@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+
+<body style="background-color: yellow;">
+<div class="container"><br><br>
+    <form action="{% url 'update' blog2.id %}" method="POST">
+
+        {% csrf_token %}
+        <h3><input type="text" name="t" value="{{blog2.title}}"></h3><br>
+        {{blog2.pub_date}}<br>
+        <textarea cols=40 rows=10 name="b">{{blog2.body}}</textarea><br><br>
+        <input type="submit" value="확인">
+
+    </form>   
+ </div>
+</body>
+ {%endblock%}

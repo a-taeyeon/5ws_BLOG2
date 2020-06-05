@@ -12,7 +12,8 @@
           <h6 class="card-subtitle mb-2 text-muted">{{blog.pub_date}}</h6>
           <p class="card-text">{{blog.summary}}<a href="{%url 'detail' blog.id%}" class="card-link">&nbsp;&nbsp;...more</a><br></p>
           <a href="{% url 'update' blog.id %}" class="card-link">수정</a>&nbsp;&nbsp;&nbsp;
-          <a href="{% url 'delete' blog.id %}" class="card-link">삭제</a>
+          <a href="{% url 'delete' blog.id %}" class="card-link">삭제</a>&nbsp;&nbsp;&nbsp;
+          <a href="{% url 'new' %}" class="card-link">새 글 작성</a>
         </div>
     </div>
     <br><br>
